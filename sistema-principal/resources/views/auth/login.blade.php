@@ -1,5 +1,21 @@
+<header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-4">
+        <span class="w-12 h-12">
+        <i class="fas fa-store text-3xl"></i>
+        </span>
+        <h1 class="text-2xl font-bold hidden sm:block">Sistema de Vendas</h1>
+    </div>
+    <nav class="space-x-6">
+        <a href="#sobre" class="text-gray-700 hover:text-blue-500">Sobre</a>
+        <a href="/" class="text-gray-700 hover:text-blue-500">Funcionalidades</a>
+        <a href="#documentacao" class="text-gray-700 hover:text-blue-500">Documentação</a>
+    </nav>
+    </div>
+</header>
 <x-guest-layout>
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+
+<div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
         <!-- Caixa de Login -->
         <div class="w-full sm:max-w-md mt-6 px-6 py-8 bg-white shadow-lg rounded-lg overflow-hidden">
             
