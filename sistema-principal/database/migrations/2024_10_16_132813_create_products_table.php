@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('category');
             $table->integer('stock_quantity');
             $table->string('image')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
