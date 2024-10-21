@@ -69,4 +69,29 @@ class SalesController extends Controller
             return response()->json(['error' => 'Erro ao criar a venda!', 'message' => $e->getMessage()], 500);
         }
     }
+
+    public function sales(Request $request)
+{
+    // Valida o email recebido na requisição
+    $validatedData = $request->validate([
+        'email' => 'required|email'
+    ]);
+
+    // Busca as vendas cadastradas para o email fornecido
+    $sales = Sales::where('customer_email', $validatedData['email'])->get();
+
+    // Verifica se existem vendas
+    if ($sales->isEmpty()) {
+        return response()->json([
+            'message' => 'Nenhuma venda encontrada para este email.',
+        ], 404);
+    }
+
+    // Retorna as vendas encontradas em formato JSON
+    return response()->json([
+        'message' => 'Vendas encontradas com sucesso.',
+        'sales' => $sales,
+    ], 200);
+}
+
 }
